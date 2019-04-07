@@ -1,0 +1,13 @@
+obj
+a.txt
+*.o
+*.s
+*.bak
+.vs
+Binaries
+Build
+coock
+Intermediate
+Saved
+*.sln
+
