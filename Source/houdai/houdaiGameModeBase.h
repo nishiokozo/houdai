@@ -7,6 +7,13 @@
 //
 #include "houdaiGameModeBase.generated.h"
 
+/*
+extern	float	g_time_prev = 0;
+extern	float	g_time_base = 0;
+extern	int		g_cntRoute = 0;
+extern	float	g_timeRoute[100];
+extern	char	g_charRoute[100];
+*/
 /**
  * 
  */

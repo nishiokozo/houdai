@@ -9,22 +9,10 @@
 #include "actorHoudai.h"
 #include "actorMarker.h"
 #include "pawnCamera.h"
+#include "houdaiGameModeBase.h"
 //
 #include "ctrlInput.generated.h"
 
-/**
- * 
-struct InfInput
-{
-		float	analogLX;
-		float	analogLY;
-		float	analogL2;
-
-		float	analogRX;
-		float	analogRY;
-		float	analogR2;
-};
- */
 
 UCLASS()
 class HOUDAI_API ActrlInput: public APlayerController
@@ -169,6 +157,7 @@ public:
 
 //////// 測定用 ////////
 private:
+/*
 	UPROPERTY()	//	ガベージコレクション用に必要なのだとか、ポインタでなくてもインスタンス複製時の挙動が変わるのだとか。
 		float	g_time_prev;
 	UPROPERTY()	//	ガベージコレクション用に必要なのだとか、ポインタでなくてもインスタンス複製時の挙動が変わるのだとか。
@@ -179,7 +168,7 @@ private:
 		float	g_timeRoute[100];
 	UPROPERTY()	//	ガベージコレクション用に必要なのだとか、ポインタでなくてもインスタンス複製時の挙動が変わるのだとか。
 		int		g_charRoute[100];
-
+*/
 	//UPROPERTY()	//	ガベージコレクション用に必要なのだとか、ポインタでなくてもインスタンス複製時の挙動が変わるのだとか。
 //		std::mt19937	rnd;
 

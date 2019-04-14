@@ -3,7 +3,6 @@
 #include "ctrlInput.h"
 
 
-
 //------------------------------------------------------------------------------
 void ActrlInput::GetAllActorsOfClass(const UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, TArray<AActor*>& OutActors)
 //------------------------------------------------------------------------------
@@ -29,6 +28,11 @@ void ActrlInput::GetAllActorsOfClass(const UObject* WorldContextObject, TSubclas
 //	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
 
 }
+extern	float	g_time_prev;
+extern	float	g_time_base;
+extern	int		g_cntRoute;
+extern	float	g_timeRoute[];
+extern	char	g_charRoute[];
 
 
 //------------------------------------------------------------------------------
@@ -37,7 +41,7 @@ void ActrlInput::flush()
 {
 	//測定表示
 	GEngine->AddOnScreenDebugMessage(-1,5.0f,FColor::Yellow,TEXT("--"));
-	float t = g_time_prev - g_time_base;
+//	float t = g_time_prev - g_time_base;
 	for(int i = 0 ; i < g_cntRoute ; i++)
 	{
 		float t = g_timeRoute[i] - g_time_base;
