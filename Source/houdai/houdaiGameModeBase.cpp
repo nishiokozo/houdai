@@ -69,7 +69,7 @@ void AhoudaiGameModeBase::Tick(float DeltaTime)
 		extern	float	g_time_base;
 		extern int g_cntRoute;extern float g_timeRoute[];extern char g_charRoute[];
 //		GEngine->AddOnScreenDebugMessage(-1,5.0f,FColor::Yellow,TEXT("--"));
-		float t = g_time_prev - g_time_base;
+//		float t = g_time_prev - g_time_base;
 		for(int i = 0 ; i < g_cntRoute ; i++)
 		{
 			float t = g_timeRoute[i] - g_time_base;
