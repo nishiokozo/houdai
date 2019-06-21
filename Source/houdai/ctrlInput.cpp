@@ -345,6 +345,45 @@ void ActrlInput::Tick( float DeltaTime )
 		prev = now;
 	}
 
+	//--- ポーズ
+	#if ( UE_BUILD_SHIPPING )
+#else
+	// デバッグ機能：GamePause中はKeyBindが働かないのでTick内に書く
+	if ( IsValid( GEngine ) )
+	{
+		bool bStep = PlayerInput->IsPressed(EKeys::Comma);
+		Debug_bStepKeyHi = (bStep && !Debug_bStepKeyPrev);
+		Debug_bStepKeyPrev = bStep;
+
+		// デバッグ機能：コマ送り	
+		if ( Debug_bStepKeyHi )
+		{
+			Debug_bInStep = true;
+		}
+		if ( Debug_bInStep )
+		{
+			if ( UGameplayStatics::IsGamePaused( this ))
+			{
+				UGameplayStatics::SetGamePaused( this, false );
+			}
+			else
+			{
+				GEngine->AddOnScreenDebugMessage( -1, 5.0f, FColor::Green, TEXT("Pause(,) exit(.)"));
+				UGameplayStatics::SetGamePaused( this, true );
+				Debug_bInStep = false;
+			}
+		}
+
+		// デバッグ機能：コマ送り解除
+		if ( PlayerInput->IsPressed(EKeys::Period) )
+		{
+			UGameplayStatics::SetGamePaused( this, false );
+			Debug_bInStep = false;
+		}
+
+	}
+#endif
+
 
 
 }

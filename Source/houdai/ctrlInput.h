@@ -23,6 +23,18 @@ class HOUDAI_API ActrlInput: public APlayerController
 
 	void Tick( float DeltaTime );
 
+	//======================================================
+	// デバッグ機能（ポーズ＆コマ送り）
+	//======================================================
+private:
+	// デバッグ機能：コマ送りキーが押された瞬間
+	bool	Debug_bStepKeyHi;
+	// デバッグ機能：コマ送りキーの前回状態
+	bool	Debug_bStepKeyPrev;
+	// デバッグ機能：コマ送り中フラグ
+	bool	Debug_bInStep;
+
+
 public:
 	ActrlInput();
 
@@ -174,6 +186,7 @@ private:
 
 	void flush();
 	void mark(char c);
+
 
 		
 };
